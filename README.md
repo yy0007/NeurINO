@@ -10,7 +10,7 @@ High-quality 3D neuron segmentation is critical for neuroscience, but its progre
 
 ```bash
 git clone https://github.com/your-username/neurino.git
-cd neurino
+cd neurino```
 
 ### 2. Create a conda environment
 conda create -n neurino python=3.10 -y
