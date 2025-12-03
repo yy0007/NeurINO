@@ -39,8 +39,6 @@ Or editable installation:
 pip install -e .
 ```
 
----
-
 ## Data
 
 This project supports four 3D neuron datasets:
@@ -90,8 +88,6 @@ configs/
 └── neurino_cwmbs.yaml
 ```
 
----
-
 ## Usage
 
 All commands assume you are in the project root directory:
@@ -102,8 +98,6 @@ cd /path/to/neurino
 
 Commands below are **draft templates**. We will update them once your actual code structure is finalized.
 
----
-
 ### Preprocessing
 
 ```bash
@@ -113,8 +107,6 @@ python scripts/preprocess.py \
     --split_dir splits/ \
     --output_dir data/processed/BigNeuron/Drosophila
 ```
-
----
 
 ### Training
 
@@ -136,11 +128,7 @@ python scripts/train.py \
     --gpus 0,1
 ```
 
----
-
 ### Evaluation
-
-#### 1. Segmentation metrics
 
 ```bash
 python scripts/evaluate.py \
@@ -149,17 +137,3 @@ python scripts/evaluate.py \
     --eval_mode seg \
     --save_dir outputs/drosophila_seg
 ```
-
-#### 2. Reconstruction metrics (with external tracers)
-
-```bash
-python scripts/evaluate.py \
-    --config configs/neurino_drosophila.yaml \
-    --checkpoint checkpoints/neurino_tiny_drosophila/best.ckpt \
-    --eval_mode trace \
-    --tracer smarttracing \
-    --tracer_exe /path/to/SmartTracing \
-    --save_dir outputs/drosophila_trace
-```
-
----
