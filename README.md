@@ -10,43 +10,51 @@ High-quality 3D neuron segmentation is critical for neuroscience, but its progre
 
 ```bash
 git clone https://github.com/your-username/neurino.git
-cd neurino```
+cd neurino
+```
 
 ### 2. Create a conda environment
+
+```bash
 conda create -n neurino python=3.10 -y
 conda activate neurino
+```
 
-3. Install PyTorch
+### 3. Install PyTorch
 
-Please follow the official PyTorch instructions depending on your OS and CUDA version:
-
-# Example only — check the official PyTorch website for the correct command
+```bash
+# Example — please check https://pytorch.org/get-started/locally/
 pip install torch torchvision torchaudio
+```
 
-4. Install additional dependencies
+### 4. Install dependencies
+
+```bash
 pip install -r requirements.txt
+```
 
+Or editable installation:
 
-Or for editable installation:
-
+```bash
 pip install -e .
+```
 
-Data
+---
 
-We evaluate NeurINO on the following datasets:
+## Data
 
-BigNeuron – Drosophila
+This project supports four 3D neuron datasets:
 
-BigNeuron – Mouse
+- **BigNeuron – Drosophila**
+- **BigNeuron – Mouse**
+- **NeuroFly**
+- **CWMBS**
 
-NeuroFly
+Raw datasets are **not included**; please download from official sources.
 
-CWMBS
+### Recommended directory structure
 
-⚠️ Raw datasets are not included in this repository.
-Please download the data from their official sources.
-
-Recommended directory structure
+```text
 data/
 ├── BigNeuron/
 │   ├── Drosophila/
@@ -61,117 +69,90 @@ data/
 └── CWMBS/
     ├── images/
     └── swc/
+```
 
+### Split files (optional)
 
-If you provide train/val/test splits:
-
+```text
 splits/
 ├── bigneuron_drosophila_train.txt
 ├── bigneuron_drosophila_val.txt
 └── bigneuron_drosophila_test.txt
+```
 
-Configuration files
+### Configuration files
 
-Dataset settings (root path, patch size, augmentations…) can be defined under:
-
+```text
 configs/
 ├── neurino_drosophila.yaml
 ├── neurino_mouse.yaml
 ├── neurino_neurofly.yaml
 └── neurino_cwmbs.yaml
+```
 
-Usage
+---
 
-All commands below assume you are in the project root directory.
+## Usage
 
+All commands assume you are in the project root directory:
+
+```bash
 cd /path/to/neurino
+```
 
+Commands below are **draft templates**. We will update them once your actual code structure is finalized.
 
-The following examples serve as draft templates — you can adjust paths and arguments once your actual code structure is finalized.
+---
 
-Preprocessing
+### Preprocessing
 
-Preprocessing typically includes normalization, resampling, cropping, patch extraction, and optional skeleton computation.
-
+```bash
 python scripts/preprocess.py \
     --config configs/neurino_drosophila.yaml \
     --dataset bigneuron_drosophila \
     --split_dir splits/ \
     --output_dir data/processed/BigNeuron/Drosophila
+```
 
+---
 
-Common arguments:
+### Training
 
---config: YAML file describing dataset & model settings
-
---dataset: dataset name
-
---split_dir: directory of split text files
-
---output_dir: where processed data will be stored
-
-Training
-
-We consider two variants of NeurINO:
-
-NeurINO-T — Tiny DINOv3 backbone
-
-NeurINO-S — Small DINOv3 backbone
-
-Example training command:
-
+```bash
 python scripts/train.py \
     --config configs/neurino_drosophila.yaml \
     --backbone dino_convnext_tiny \
     --exp_name neurino_tiny_drosophila \
     --gpus 0
+```
 
+Multi-GPU:
 
-Or multi-GPU training:
-
+```bash
 python scripts/train.py \
     --config configs/neurino_neurofly.yaml \
     --backbone dino_convnext_small \
     --exp_name neurino_small_neurofly \
     --gpus 0,1
+```
 
+---
 
-Common arguments:
+### Evaluation
 
---config: path to YAML config
+#### 1. Segmentation metrics
 
---backbone: backbone type
-
---exp_name: experiment name
-
---gpus: GPU IDs
-
---resume: resume from checkpoint
-
---num_epochs: override number of epochs
-
---amp: enable mixed precision
-
-Evaluating
-1. Segmentation metrics
+```bash
 python scripts/evaluate.py \
     --config configs/neurino_drosophila.yaml \
     --checkpoint checkpoints/neurino_tiny_drosophila/best.ckpt \
     --eval_mode seg \
     --save_dir outputs/drosophila_seg
+```
 
+#### 2. Reconstruction metrics (with external tracers)
 
-Outputs may include:
-
-F1-score
-
-HD95
-
-Per-volume metrics
-
-Aggregated dataset metrics
-
-2. Reconstruction metrics (using external tracers)
+```bash
 python scripts/evaluate.py \
     --config configs/neurino_drosophila.yaml \
     --checkpoint checkpoints/neurino_tiny_drosophila/best.ckpt \
@@ -179,3 +160,6 @@ python scripts/evaluate.py \
     --tracer smarttracing \
     --tracer_exe /path/to/SmartTracing \
     --save_dir outputs/drosophila_trace
+```
+
+---
