@@ -41,62 +41,9 @@ pip install -e .
 
 ## Data
 
-This project supports four 3D neuron datasets:
-
-- **BigNeuron – Drosophila**
-- **BigNeuron – Mouse**
-- **NeuroFly**
-- **CWMBS**
-
-Raw datasets are **not included**; please download from official sources.
-
-### Recommended directory structure
-
-```text
-data/
-├── BigNeuron/
-│   ├── Drosophila/
-│   │   ├── images/
-│   │   └── swc/
-│   └── Mouse/
-│       ├── images/
-│       └── swc/
-├── NeuroFly/
-│   ├── images/
-│   └── swc/
-└── CWMBS/
-    ├── images/
-    └── swc/
-```
-
-### Split files (optional)
-
-```text
-splits/
-├── bigneuron_drosophila_train.txt
-├── bigneuron_drosophila_val.txt
-└── bigneuron_drosophila_test.txt
-```
-
-### Configuration files
-
-```text
-configs/
-├── neurino_drosophila.yaml
-├── neurino_mouse.yaml
-├── neurino_neurofly.yaml
-└── neurino_cwmbs.yaml
-```
+The datasets used in our paper are from BigNeuron, NeuroFly and CWMBS. 
 
 ## Usage
-
-All commands assume you are in the project root directory:
-
-```bash
-cd /path/to/neurino
-```
-
-Commands below are **draft templates**. We will update them once your actual code structure is finalized.
 
 ### Preprocessing
 
@@ -109,16 +56,6 @@ python scripts/preprocess.py \
 ```
 
 ### Training
-
-```bash
-python scripts/train.py \
-    --config configs/neurino_drosophila.yaml \
-    --backbone dino_convnext_tiny \
-    --exp_name neurino_tiny_drosophila \
-    --gpus 0
-```
-
-Multi-GPU:
 
 ```bash
 python scripts/train.py \
