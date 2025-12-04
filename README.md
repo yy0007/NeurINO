@@ -83,7 +83,7 @@ python -m nnunet_mednext.run.run_training \
     -p nnUNetPlansv2.1_trgSp_1x1x1
 ```
 
-### Evaluation
+### Inference
 
 Inference / evaluation is done with:
 
