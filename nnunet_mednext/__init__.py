@@ -5,8 +5,7 @@ from __future__ import absolute_import
 # print("If you have questions or suggestions, feel free to open an issue at https://github.com/MIC-DKFZ/nnUNet\n")
 
 from . import *
-from nnunet_mednext.network_architecture.mednextv1_neurino.NeurINO import MedNeXt
-from nnunet_mednext.network_architecture.mednextv1_neurino.create_mednext_v1 import create_mednext_v1
-from nnunet_mednext.network_architecture.mednextv1_neurino.blocks import \
+from nnunet_mednext.network_architecture.neurino.NeurINO import NeurINO 
+from nnunet_mednext.network_architecture.neurino.blocks import \
     MedNeXtBlock, MedNeXtUpBlock, MedNeXtDownBlock
 from nnunet_mednext.run.load_weights import upkern_load_weights

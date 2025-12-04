@@ -1,10 +1,48 @@
 import torch
 import torch.nn as nn
 import torch.utils.checkpoint as checkpoint
+from types import MethodType
 from transformers import AutoConfig, AutoModel, AutoImageProcessor 
+from nnunet_mednext.network_architecture.batchrenorm3d import BatchRenorm3d, ChannelRenorm3d_Flexible
 
-from nnunet_mednext.network_architecture.mednextv1_neurino.blocks import *
-from nnunet_mednext.network_architecture.mednextv1_neurino.inflate_dino_convnext2d_to_3d import *
+from nnunet_mednext.network_architecture.neurino.blocks import *
+from nnunet_mednext.network_architecture.neurino.inflate_dino_convnext2d_to_3d import *
+from transformers.models.dinov3_convnext.modeling_dinov3_convnext import DINOv3ConvNextLayer
+
+def dinov3_convnext_layer_forward_3d(self, features: torch.Tensor) -> torch.Tensor:
+    if features.dim() != 5:
+        raise ValueError(f"Expected 5D tensor [B, C, D, H, W], got shape: {features.shape}")
+
+    residual = features                        # [B, C, D, H, W]
+    features = self.depthwise_conv(features)   # [B, C, D, H, W]
+    features = features.permute(0, 2, 3, 4, 1)
+    features = self.layer_norm(features)       # [B, D, H, W, C]
+    features = self.pointwise_conv1(features)  # [B, D, H, W, 4C]
+    features = self.activation_fn(features)
+    features = self.pointwise_conv2(features)  # [B, D, H, W, C]
+    features = features * self.gamma
+    
+    # back to [B, C, D, H, W]
+    features = features.permute(0, 4, 1, 2, 3)
+    features = residual + self.drop_path(features)
+
+    return features
+
+def patch_dinov3_blocks_to_3d(model3d):
+    for module in model3d.modules():
+        if isinstance(module, DINOv3ConvNextLayer):
+            module.forward = MethodType(dinov3_convnext_layer_forward_3d, module)
+    print("✅ Patched all DINOv3ConvNextLayer.forward → 3D version.")
+    return model3d
+
+def forward_features_multi(self, x):
+    features = []
+    for stage in self.stages:
+        # print('forward_features_multi shape:', x.shape) 
+        x = stage(x)
+        features.append(x)
+    return features 
+
 
 class NeurINO(nn.Module):    
 

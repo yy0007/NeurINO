@@ -2,7 +2,7 @@
 
 High-quality 3D neuron segmentation is critical for neuroscience, but its progress is hampered by the scarcity of annotated 3D volumetric data. We address this by proposing **NeurINO**, a novel framework that effectively transfers the rich 2D visual representations learned by the self-supervised foundation model DINOv3 into the 3D neuron domain.
 
-NeurINO is developed on top of MedNeXt. We evaluate NeurINO on three neuronal imaging datasets:
+NeurINO is developed on top of [MedNeXt](https://github.com/MIC-DKFZ/MedNeXt) framework. We evaluate NeurINO on three neuronal imaging datasets:
 
 - [BigNeuron](https://github.com/BigNeuron/Data/releases)
 - [NeuroFly](https://zenodo.org/records/13328867) 
@@ -31,12 +31,14 @@ pip install -e .
 
 ## Usage
 
+Our framework follows the MedNeXt-style preprocessing and training workflows. 
+
 ### Preprocessing
 
-Preprocessing follows the MedNeXt planning & preprocessing pipeline:
+Run data preprocessing with:
 
 ```bash
-mednextv1_plan_and_preprocess \
+neurino_plan_and_preprocess \
     -t 001 \
     -pl3d ExperimentPlanner3D_v21_customTargetSpacing_1x1x1
 ```
@@ -48,12 +50,10 @@ Where:
 
 ### Training
 
-Training uses the nnUNet_mednext trainer system.
-
-General pattern:
+General training command: 
 
 ```bash
-python -m nnunet_mednext.run.run_training \
+neurino_train \
     3d_fullres <TrainerName> <TASK_ID> <FOLD> \
     -p nnUNetPlansv2.1_trgSp_1x1x1
 ```
@@ -70,7 +70,7 @@ python -m nnunet_mednext.run.run_training \
 ##### Center inflation + DINOv3-Tiny
 
 ```bash
-python -m nnunet_mednext.run.run_training \
+neurino_train \
     3d_fullres NeurINO_CenterInfla_SGL_T_kernel3 001 0 \
     -p nnUNetPlansv2.1_trgSp_1x1x1
 ```
@@ -78,7 +78,7 @@ python -m nnunet_mednext.run.run_training \
 ##### Average inflation + DINOv3-Small
 
 ```bash
-python -m nnunet_mednext.run.run_training \
+neurino_train \
     3d_fullres NeurINO_AvgInfla_SGL_S_kernel3 001 0 \
     -p nnUNetPlansv2.1_trgSp_1x1x1
 ```
@@ -88,7 +88,7 @@ python -m nnunet_mednext.run.run_training \
 Inference / evaluation is done with:
 
 ```bash
-python -m nnunet_mednext.inference.predict_simple \
+neurino_predict \
     -i <imagesTs_dir> \
     -o <output_dir> \
     -t <TASK_ID> \

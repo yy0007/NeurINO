@@ -2,7 +2,7 @@ import torch
 import os
 import torch.nn as nn
 # from nnunet_mednext.network_architecture.mednextv1.MedNextV1 import MedNeXt as MedNeXt_Orig
-from nnunet_mednext.network_architecture.mednextv1_neurino.NeurINO import NeurINO as NeurINO_Orig
+from nnunet_mednext.network_architecture.neurino.NeurINO import NeurINO as NeurINO_Orig
 from nnunet_mednext.training.network_training.nnUNetTrainerV2 import nnUNetTrainerV2
 from nnunet_mednext.network_architecture.neural_network import SegmentationNetwork
 from nnunet_mednext.utilities.nd_softmax import softmax_helper
@@ -59,7 +59,7 @@ class NeurINO_CenterInfla_SGL_T_kernel3(nnUNetTrainerV2_Optim_and_LR):
             use_mednext_bottleneck = True,   
             batchrenorm3d_replace_scope = 'all_except_dino', 
             use_skeleton_graph_loss = True,     
-            skeleton_graph_loss_weight = 0.1,  
+            skeleton_loss_weight = 0.1,  
             block_counts = [2,2,2,2,2,2,2,2,2], 
             # checkpoint_style = 'outside_block'  # no 
         )
@@ -87,7 +87,7 @@ class NeurINO_AvgInfla_SGL_T_kernel3(nnUNetTrainerV2_Optim_and_LR):
             use_mednext_bottleneck = True,   
             batchrenorm3d_replace_scope = 'all_except_dino', 
             use_skeleton_graph_loss = True,     
-            skeleton_graph_loss_weight = 0.1,  
+            skeleton_loss_weight = 0.1,  
             block_counts = [2,2,2,2,2,2,2,2,2], 
             # checkpoint_style = 'outside_block'  # no 
         )
@@ -116,7 +116,7 @@ class NeurINO_CenterInfla_SGL_S_kernel3(nnUNetTrainerV2_Optim_and_LR):
             use_mednext_bottleneck = True,   
             batchrenorm3d_replace_scope = 'all_except_dino', 
             use_skeleton_graph_loss = True,     
-            skeleton_graph_loss_weight = 0.1,  
+            skeleton_loss_weight = 0.1,  
             block_counts = [2,2,2,2,2,2,2,2,2], 
             # checkpoint_style = 'outside_block'  # no 
         )
@@ -145,7 +145,7 @@ class NeurINO_AvgInfla_SGL_S_kernel3(nnUNetTrainerV2_Optim_and_LR):
             use_mednext_bottleneck = True,   
             batchrenorm3d_replace_scope = 'all_except_dino', 
             use_skeleton_graph_loss = True,     
-            skeleton_graph_loss_weight = 0.1,  
+            skeleton_loss_weight = 0.1,  
             block_counts = [2,2,2,2,2,2,2,2,2], 
             # checkpoint_style = 'outside_block'  # no 
         )

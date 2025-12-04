@@ -20,7 +20,7 @@ import torch
 import wandb
 from torch.nn.parallel.data_parallel import DataParallel
 from nnunet_mednext.training.data_augmentation.data_augmentation_moreDA import get_moreDA_augmentation
-from nnunet_mednext.training.loss_functions.deep_supervision import MultipleOutputLoss2, MultipleOutputLoss3
+from nnunet_mednext.training.loss_functions.deep_supervision import MultipleOutputLoss2 
 from nnunet_mednext.utilities.to_torch import maybe_to_torch, to_cuda
 from nnunet_mednext.network_architecture.generic_UNet import Generic_UNet
 from nnunet_mednext.network_architecture.initialization import InitWeights_He

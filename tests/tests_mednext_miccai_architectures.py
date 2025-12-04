@@ -1,6 +1,6 @@
 import pytest
 import torch
-from nnunet_mednext.network_architecture.mednextv1_neurino.create_mednext_v1 import create_mednext_v1
+from nnunet_mednext.network_architecture.neurino.create_mednext_v1 import create_mednext_v1
 
 class Test_MedNeXt_archs:
 
