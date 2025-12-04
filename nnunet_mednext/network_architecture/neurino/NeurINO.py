@@ -132,6 +132,7 @@ class NeurINO(nn.Module):
                 dino2d = AutoModel.from_pretrained(dino_model_name)                         
             # dino2d = AutoModel.from_pretrained(dino_model_name)   
             dino3d = inflate_convnext2d_to_3d(dino2d, methods={'downsample': inflation_type, 'stage': inflation_type}, input_channels=in_channels, downsample_0_to_double=dino_downsample0_to_double, stage_kernel_depth=dino_stage_kernelDepth)
+            dino3d = patch_dinov3_blocks_to_3d(dino3d)
             dino3d.forward_features_multi = MethodType(forward_features_multi, dino3d)
             print('✅ dino3d framework:', dino3d)
             self.encoder = dino3d  
