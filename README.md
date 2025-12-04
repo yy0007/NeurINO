@@ -5,6 +5,12 @@
 
 High-quality 3D neuron segmentation is critical for neuroscience, but its progress is hampered by the scarcity of annotated 3D volumetric data. We address this by proposing **NeurINO**, a novel framework that effectively transfers the rich 2D visual representations learned by the self-supervised foundation model DINOv3 into the 3D neuron domain.
 
+NeurINO is developed on top of MedNeXt. We evaluate NeurINO on three neuronal imaging datasets:
+
+- [BigNeuron](#bigneuron)
+- [NeuroFly](#neurofly)
+- [CWMBS](#cwmbs) 
+
 ## Installation
 ### 1. Clone this repository
 
@@ -26,21 +32,7 @@ conda activate neurino
 pip install -e .
 ```
 
-## Data
-
-The datasets used in our paper are from BigNeuron, NeuroFly and CWMBS. 
-
 ## Usage
-
-All commands assume:
-
-```bash
-conda activate neurino
-```
-
-NeurINO is trained and evaluated **via nnUNet_mednext trainers**.
-
----
 
 ## Preprocessing
 
@@ -48,18 +40,14 @@ Preprocessing follows the MedNeXt planning & preprocessing pipeline:
 
 ```bash
 mednextv1_plan_and_preprocess \
-    -t 009 \
+    -t 001 \
     -pl3d ExperimentPlanner3D_v21_customTargetSpacing_1x1x1
 ```
 
 Where:
 
-- `-t 009` = task ID (e.g., Task009_NeuroFly)
-- `-pl3d` = 3D planner variant (target spacing 1×1×1)
-
-Run this once per dataset.
-
----
+- `-t 001` = task ID 
+- `-pl3d` = 3D planner variant (target spacing 1×1×1) 
 
 ## Training
 
@@ -77,10 +65,8 @@ python -m nnunet_mednext.run.run_training \
 
 | Component | Meaning |
 |----------|---------|
-| `CenterInfla` / `AvgInfla` | Inflation strategy (center vs. average) |
-| `SGL` | Skeleton loss enabled |
+| `CenterInfla` / `AvgInfla` | Inflation strategy (center vs. average) | 
 | `T` / `S` | DINOv3-Tiny / DINOv3-Small backbone |
-| `kernel3` | Inflation kernel size |
 
 ### Examples
 
@@ -124,24 +110,4 @@ python -m nnunet_mednext.inference.predict_simple \
     -p nnUNetPlansv2.1_trgSp_1x1x1 \
     -tr <TrainerName> \
     -chk model_best
-```
-
-### Example
-
-```bash
-python -m nnunet_mednext.inference.predict_simple \
-    -i nnUNet_raw_data_base/nnUNet_raw_data/Task001_MyDataset/imagesTs \
-    -o nnUNet_raw_data_base/nnUNet_raw_data/Task001_MyDataset/pred_NeurINO_CenterInfla_SGL_T_kernel3 \
-    -t 001 \
-    -m 3d_fullres \
-    -f 0 \
-    -p nnUNetPlansv2.1_trgSp_1x1x1 \
-    -tr NeurINO_CenterInfla_SGL_T_kernel3 \
-    -chk model_best
-```
-
-Replace trainer name as needed:
-
-```bash
--tr NeurINO_AvgInfla_SGL_S_kernel3
-```
+``` 
