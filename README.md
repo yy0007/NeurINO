@@ -7,9 +7,9 @@ High-quality 3D neuron segmentation is critical for neuroscience, but its progre
 
 NeurINO is developed on top of MedNeXt. We evaluate NeurINO on three neuronal imaging datasets:
 
-- [BigNeuron](#bigneuron)
-- [NeuroFly](#neurofly)
-- [CWMBS](#cwmbs) 
+- [BigNeuron](https://github.com/BigNeuron/Data/releases)
+- [NeuroFly](https://github.com/neurodata/NeuroFly) 
+- [CWMBS](https://github.com/cwmbs-dataset-link)  
 
 ## Installation
 ### 1. Clone this repository
@@ -47,7 +47,7 @@ mednextv1_plan_and_preprocess \
 Where:
 
 - `-t 001` = task ID 
-- `-pl3d` = 3D planner variant (target spacing 1×1×1) 
+- `-pl3d` = 3D planner variant  
 
 ### Training
 
@@ -78,19 +78,11 @@ python -m nnunet_mednext.run.run_training \
     -p nnUNetPlansv2.1_trgSp_1x1x1
 ```
 
-##### Average inflation + DINOv3-Tiny
+##### Average inflation + DINOv3-Small
 
 ```bash
 python -m nnunet_mednext.run.run_training \
-    3d_fullres NeurINO_AvgInfla_SGL_T_kernel3 001 0 \
-    -p nnUNetPlansv2.1_trgSp_1x1x1
-```
-
-##### Center inflation + DINOv3-Small
-
-```bash
-python -m nnunet_mednext.run.run_training \
-    3d_fullres NeurINO_CenterInfla_SGL_S_kernel3 001 0 \
+    3d_fullres NeurINO_AvgInfla_SGL_S_kernel3 001 0 \
     -p nnUNetPlansv2.1_trgSp_1x1x1
 ```
 
