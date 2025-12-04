@@ -34,7 +34,7 @@ pip install -e .
 
 ## Usage
 
-## Preprocessing
+### Preprocessing
 
 Preprocessing follows the MedNeXt planning & preprocessing pipeline:
 
@@ -49,7 +49,7 @@ Where:
 - `-t 001` = task ID 
 - `-pl3d` = 3D planner variant (target spacing 1×1×1) 
 
-## Training
+### Training
 
 Training uses the nnUNet_mednext trainer system.
 
@@ -61,16 +61,16 @@ python -m nnunet_mednext.run.run_training \
     -p nnUNetPlansv2.1_trgSp_1x1x1
 ```
 
-### Trainer naming convention
+#### Trainer naming convention
 
 | Component | Meaning |
 |----------|---------|
 | `CenterInfla` / `AvgInfla` | Inflation strategy (center vs. average) | 
 | `T` / `S` | DINOv3-Tiny / DINOv3-Small backbone |
 
-### Examples
+#### Examples
 
-#### Center inflation + DINOv3-Tiny
+##### Center inflation + DINOv3-Tiny
 
 ```bash
 python -m nnunet_mednext.run.run_training \
@@ -78,7 +78,7 @@ python -m nnunet_mednext.run.run_training \
     -p nnUNetPlansv2.1_trgSp_1x1x1
 ```
 
-#### Average inflation + DINOv3-Tiny
+##### Average inflation + DINOv3-Tiny
 
 ```bash
 python -m nnunet_mednext.run.run_training \
@@ -86,7 +86,7 @@ python -m nnunet_mednext.run.run_training \
     -p nnUNetPlansv2.1_trgSp_1x1x1
 ```
 
-#### Center inflation + DINOv3-Small
+##### Center inflation + DINOv3-Small
 
 ```bash
 python -m nnunet_mednext.run.run_training \
@@ -94,9 +94,7 @@ python -m nnunet_mednext.run.run_training \
     -p nnUNetPlansv2.1_trgSp_1x1x1
 ```
 
----
-
-## Evaluation
+### Evaluation
 
 Inference / evaluation is done with:
 
