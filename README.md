@@ -1,5 +1,4 @@
 # NeuroSeg Meets DINOv3: Transferring 2D Self-Supervised Visual Priors to 3D Neuron Segmentation via DINOv3 Initialization
-[TODO: Place a representative image, such as the model architecture figure or a side-by-side visualization of segmentation results, here.]
 
 ## Overview
 
