@@ -8,8 +8,8 @@ High-quality 3D neuron segmentation is critical for neuroscience, but its progre
 NeurINO is developed on top of MedNeXt. We evaluate NeurINO on three neuronal imaging datasets:
 
 - [BigNeuron](https://github.com/BigNeuron/Data/releases)
-- [NeuroFly](https://github.com/neurodata/NeuroFly) 
-- [CWMBS](https://github.com/cwmbs-dataset-link)  
+- [NeuroFly](https://zenodo.org/records/13328867) 
+- [CWMBS](https://github.com/crz22/CWMBS)  
 
 ## Installation
 ### 1. Clone this repository
