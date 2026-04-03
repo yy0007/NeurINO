@@ -1,3 +1,12 @@
+# 🧠 NeuroSeg Meets DINOv3  
+### Transferring 2D Self-Supervised Visual Priors to 3D Neuron Segmentation  
+
+<p align="center">
+  <a href="https://arxiv.org/abs/XXXX"><img src="https://img.shields.io/badge/arXiv-Paper-red"></a>
+  <a href="https://github.com/yy0007/NeurINO"><img src="https://img.shields.io/badge/Code-GitHub-black"></a>
+  <a href="#"><img src="https://img.shields.io/badge/Project-Page-blue"></a>
+</p>
+
 # NeuroSeg Meets DINOv3: Transferring 2D Self-Supervised Visual Priors to 3D Neuron Segmentation via DINOv3 Initialization
 
 High-quality 3D neuron segmentation is critical for neuroscience, but its progress is hampered by the scarcity of annotated 3D volumetric data. We address this by proposing **NeurINO**, a novel framework that effectively transfers the rich 2D visual representations learned by the self-supervised foundation model DINOv3 into the 3D neuron domain.
