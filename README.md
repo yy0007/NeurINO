@@ -14,7 +14,10 @@
 
 ## 🧬 Related Work
 
-> 👋 A series of works on topology-aware neuron segmentation and foundation model adaptation for 3D neuroimaging.
+<details open>
+<summary>👋 A series of works on topology-aware neuron segmentation and foundation model adaptation for 3D neuroimaging.</summary>
+
+<br> 
 
 > ### [Boosting 3D Neuron Segmentation with 2D Vision Transformer Pre-trained on Natural Images](https://arxiv.org/abs/2405.02686)  
 > **Authors:** Yik San Cheng, Runkai Zhao, Heng Wang, Hanchuan Peng, Weidong Cai  
@@ -34,7 +37,7 @@
 >  
 > [![bioRxiv](https://img.shields.io/badge/bioRxiv-2025.08.21.671506-blue)](https://www.biorxiv.org/content/10.1101/2025.08.21.671506v1) [![Journal](https://img.shields.io/badge/Brain%20Informatics-Published-green)](https://doi.org/10.1186/s40708-025-00288-5)
 
-
+</details>
 
 ## 📊 Datasets
 
