@@ -16,7 +16,7 @@
   <a href="https://yy0007.github.io/NeurINO/">🌐 Project Page </a>
 </p> -->
 
-## 📰 Latest News
+## 📰 Latest New
 
 - [2026.03] 📄 arXiv version released
 - [2026.03] 🚀 Code released 
