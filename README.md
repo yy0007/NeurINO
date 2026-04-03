@@ -14,6 +14,35 @@
 
 ## 🧬 Related Work
 
+> 👋 A series of works on topology-aware neuron segmentation and foundation model adaptation for 3D neuroimaging.
+
+---
+
+### **Boosting 3D Neuron Segmentation with 2D Vision Transformer Pre-trained on Natural Images**
+**Authors:** Yik San Cheng, Runkai Zhao, Heng Wang, Hanchuan Peng, Weidong Cai  
+**TL;DR:** Leverages 2D Vision Transformer pre-trained on natural images to initialize 3D neuron segmentation models, improving data efficiency and performance.
+
+[![arXiv](https://img.shields.io/badge/arXiv-2405.02686-red)](https://arxiv.org/abs/2405.02686)
+
+---
+
+### **DINeuro: Distilling Knowledge from 2D Natural Images via Deformable Tubular Transferring Strategy for 3D Neuron Reconstruction**
+**Authors:** Yik San Cheng, Runkai Zhao, Heng Wang, Hanchuan Peng, Yui Lo, Yuqian Chen, Lauren J. O'Donnell, Weidong Cai  
+**TL;DR:** Introduces a deformable tubular transferring strategy to distill 2D natural image priors into 3D neuron reconstruction, enhancing morphological representation and improving segmentation accuracy.
+
+[![arXiv](https://img.shields.io/badge/arXiv-2410.22078-red)](https://arxiv.org/abs/2410.22078)
+
+---
+
+### **Modeling 3D Mesoscaled Neuronal Complexity through Learning-based Dynamic Morphometric Convolution**
+**Authors:** Yik San Cheng, Runkai Zhao, Heng Wang, Hanchuan Peng, Wojciech Chrzanowski, Weidong Cai  
+**TL;DR:** Proposes Dynamic Morph-Aware Convolution (DMAC) with adaptive shape and orientation modeling to capture complex neuronal morphology, significantly improving topology-aware reconstruction metrics.
+
+[![bioRxiv](https://img.shields.io/badge/bioRxiv-2025.08.21.671506-blue)](https://www.biorxiv.org/content/10.1101/2025.08.21.671506v1)
+[![Journal](https://img.shields.io/badge/Brain%20Informatics-Published-green)](https://doi.org/10.1186/s40708-025-00288-5)
+
+---
+
 ## 📊 Datasets
 
 We evaluate NeurINO on three neuronal imaging datasets:
