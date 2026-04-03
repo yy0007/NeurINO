@@ -1,6 +1,3 @@
-<p align="center">
-  <img src="logo.jpg" width="180">
-</p>
 # 🧠 NeuroSeg Meets DINOv3: Transferring 2D Self-Supervised Visual Priors to 3D Neuron Segmentation via DINOv3 Initialization 
 
 <p align="center">
