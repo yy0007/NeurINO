@@ -33,7 +33,7 @@ NeurINO is developed on top of [MedNeXt](https://github.com/MIC-DKFZ/MedNeXt) fr
 - Transfer of 2D self-supervised priors into 3D
 - Strong intra-slice semantic representation 
 - Improved inter-slice aggregation
-- Better topology-aware segmentation reconstruction
+- Better topology-aware reconstruction
 
 ## ⚙️ Installation
 ### 1. Clone this repository
