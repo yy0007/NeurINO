@@ -7,9 +7,9 @@
 </p> -->
 
 <p align="center">
-  <a href="https://arxiv.org/abs/XXXX">📄 Paper</a> |
-  <a href="https://github.com/yy0007/NeurINO">💻 GitHub</a> |
-  <a href="https://yy0007.github.io/NeurINO/">🌐 Project Page</a>
+  <a href="https://arxiv.org/abs/XXXX">📄 Arxiv </a> |
+  <a href="https://github.com/yy0007/NeurINO">💻 GitHub </a> |
+  <a href="https://yy0007.github.io/NeurINO/">🌐 Project Page </a>
 </p>
 
 ## 📰 Latest News
