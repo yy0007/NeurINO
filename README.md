@@ -1,5 +1,4 @@
-# 🧠 NeuroSeg Meets DINOv3  
-### Transferring 2D Self-Supervised Visual Priors to 3D Neuron Segmentation  
+# 🧠 NeuroSeg Meets DINOv3: Transferring 2D Self-Supervised Visual Priors to 3D Neuron Segmentation via DINOv3 Initialization 
 
 <p align="center">
   <a href="https://arxiv.org/abs/XXXX"><img src="https://img.shields.io/badge/arXiv-Paper-red"></a>
