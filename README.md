@@ -22,7 +22,7 @@
 
 [![arXiv](https://img.shields.io/badge/arXiv-2405.02686-red)](https://arxiv.org/abs/2405.02686)
 
----
+>
 
 ### **DINeuro: Distilling Knowledge from 2D Natural Images via Deformable Tubular Transferring Strategy for 3D Neuron Reconstruction**
 **Authors:** Yik San Cheng, Runkai Zhao, Heng Wang, Hanchuan Peng, Yui Lo, Yuqian Chen, Lauren J. O'Donnell, Weidong Cai  
