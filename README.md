@@ -6,17 +6,36 @@
   <a href="https://yy0007.github.io/NeurINO"><img src="https://img.shields.io/badge/Project-Page-blue"></a>
 </p>
 
-# NeuroSeg Meets DINOv3: Transferring 2D Self-Supervised Visual Priors to 3D Neuron Segmentation via DINOv3 Initialization
+## 📰 Latest News
+
+- [2026.03] 📄 arXiv version released
+- [2026.03] 🚀 Code released 
+- [2026.02] 🎉 NeurINO accepted to CVPR 2026
+
+## 🧬 Related Work
+
+## 📊 Datasets
+
+We evaluate NeurINO on three neuronal imaging datasets:
+
+| Dataset | Download |
+|--------|----------|
+| BigNeuron | https://github.com/BigNeuron/Data/releases |
+| NeuroFly | https://zenodo.org/records/13328867 |
+| CWMBS | https://github.com/crz22/CWMBS |
+
+## 🧠 Overview
 
 High-quality 3D neuron segmentation is critical for neuroscience, but its progress is hampered by the scarcity of annotated 3D volumetric data. We address this by proposing **NeurINO**, a novel framework that effectively transfers the rich 2D visual representations learned by the self-supervised foundation model DINOv3 into the 3D neuron domain.
 
-NeurINO is developed on top of [MedNeXt](https://github.com/MIC-DKFZ/MedNeXt) framework. We evaluate NeurINO on three neuronal imaging datasets:
+NeurINO is developed on top of [MedNeXt](https://github.com/MIC-DKFZ/MedNeXt) framework. It enables:
 
-- [BigNeuron](https://github.com/BigNeuron/Data/releases)
-- [NeuroFly](https://zenodo.org/records/13328867) 
-- [CWMBS](https://github.com/crz22/CWMBS)  
+- Transfer of 2D self-supervised priors into 3D
+- Strong intra-slice semantic representation 
+- Improved inter-slice aggregation
+- Better topology-aware segmentation reconstruction
 
-## Installation
+## ⚙️ Installation
 ### 1. Clone this repository
 
 ```bash
@@ -37,11 +56,11 @@ conda activate neurino
 pip install -e .
 ```
 
-## Usage
+## ⚡ Usage
 
 Our framework follows the MedNeXt-style preprocessing and training workflows. 
 
-### Preprocessing
+### 🔧 Preprocessing
 
 Run data preprocessing with:
 
@@ -56,7 +75,7 @@ Where:
 - `-t 001` = task ID 
 - `-pl3d` = 3D planner variant  
 
-### Training
+### 🚀 Training
 
 General training command: 
 
@@ -91,7 +110,7 @@ neurino_train \
     -p nnUNetPlansv2.1_trgSp_1x1x1
 ```
 
-### Inference
+### 🔍 Inference
 
 Inference / evaluation is done with:
 
