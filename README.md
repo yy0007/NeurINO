@@ -16,8 +16,6 @@
 
 > 👋 A series of works on topology-aware neuron segmentation and foundation model adaptation for 3D neuroimaging.
 
----
-
 ### **Boosting 3D Neuron Segmentation with 2D Vision Transformer Pre-trained on Natural Images**
 **Authors:** Yik San Cheng, Runkai Zhao, Heng Wang, Hanchuan Peng, Weidong Cai  
 **TL;DR:** Leverages 2D Vision Transformer pre-trained on natural images to initialize 3D neuron segmentation models, improving data efficiency and performance.
@@ -41,7 +39,6 @@
 [![bioRxiv](https://img.shields.io/badge/bioRxiv-2025.08.21.671506-blue)](https://www.biorxiv.org/content/10.1101/2025.08.21.671506v1)
 [![Journal](https://img.shields.io/badge/Brain%20Informatics-Published-green)](https://doi.org/10.1186/s40708-025-00288-5)
 
----
 
 ## 📊 Datasets
 
