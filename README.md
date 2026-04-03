@@ -5,7 +5,7 @@
 # 🧠 NeuroSeg Meets DINOv3: Transferring 2D Self-Supervised Visual Priors to 3D Neuron Segmentation via DINOv3 Initialization 
 
 <p align="center">
-  <a href="https://arxiv.org/abs/XXXX"><img src="https://img.shields.io/badge/arXiv-Paper-red"></a>
+  <a href="https://arxiv.org/abs/2603.23104"><img src="https://img.shields.io/badge/arXiv-Paper-red"></a>
   <a href="https://github.com/yy0007/NeurINO"><img src="https://img.shields.io/badge/Code-GitHub-black"></a>
   <a href="https://yy0007.github.io/NeurINO"><img src="https://img.shields.io/badge/Project-Page-blue"></a>
 </p> 
