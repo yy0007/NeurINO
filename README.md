@@ -19,7 +19,7 @@
 
 <br> 
 
-> ### [Boosting 3D Neuron Segmentation with 2D Vision Transformer Pre-trained on Natural Images](https://arxiv.org/abs/2405.02686)  
+> [Boosting 3D Neuron Segmentation with 2D Vision Transformer Pre-trained on Natural Images](https://arxiv.org/abs/2405.02686)  
 > **Authors:** Yik San Cheng, Runkai Zhao, Heng Wang, Hanchuan Peng, Weidong Cai  
 > **TLDR:** Leverages 2D Vision Transformer pre-trained on natural images to initialize 3D neuron segmentation models, improving data efficiency and performance.  
 >  
