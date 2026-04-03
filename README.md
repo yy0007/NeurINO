@@ -16,11 +16,11 @@
 
 > 👋 A series of works on topology-aware neuron segmentation and foundation model adaptation for 3D neuroimaging.
 
-### **Boosting 3D Neuron Segmentation with 2D Vision Transformer Pre-trained on Natural Images**
-**Authors:** Yik San Cheng, Runkai Zhao, Heng Wang, Hanchuan Peng, Weidong Cai  
-**TLDR:** Leverages 2D Vision Transformer pre-trained on natural images to initialize 3D neuron segmentation models, improving data efficiency and performance.
-
-[![arXiv](https://img.shields.io/badge/arXiv-2405.02686-red)](https://arxiv.org/abs/2405.02686)
+> ### [Boosting 3D Neuron Segmentation with 2D Vision Transformer Pre-trained on Natural Images](https://arxiv.org/abs/2405.02686)  
+> **Authors:** Yik San Cheng, Runkai Zhao, Heng Wang, Hanchuan Peng, Weidong Cai  
+> **TLDR:** Leverages 2D Vision Transformer pre-trained on natural images to initialize 3D neuron segmentation models, improving data efficiency and performance.  
+>  
+> [![arXiv](https://img.shields.io/badge/arXiv-2405.02686-red)](https://arxiv.org/abs/2405.02686)
 
 
 > ### **DINeuro: Distilling Knowledge from 2D Natural Images via Deformable Tubular Transferring Strategy for 3D Neuron Reconstruction**
