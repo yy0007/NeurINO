@@ -1,24 +1,40 @@
-# NeurINO AutoResearch
+# 🤖 NeurINO AutoResearch
 
-This folder contains the autonomous research framework used for NeurINO experiments.
+<p align="center">
+  Autonomous hypothesis-driven research framework for topology-aware 3D neuron segmentation.
+</p>
 
-The goal of this framework is to support controlled, hypothesis-driven exploration of:
+<p align="center">
+  <a href="../README.md"><img src="https://img.shields.io/badge/Main-NeurINO-black"></a>
+  <a href="./program_seg.md"><img src="https://img.shields.io/badge/Research-Policy-blue"></a>
+</p>
+
+---
+
+## 🧠 Overview
+
+NeurINO AutoResearch is an autonomous experimentation framework designed for controlled and interpretable exploration of:
+
 - DINOv3-to-3D transfer strategies
 - topology-aware learning objectives
 - architectural configurations
 - training and optimization strategies
 
-This framework operates under a constrained and interpretable search space designed for scientific experimentation and reproducibility.
+This framework operates within a constrained interpretable research space designed for:
+- scientific experimentation,
+- topology-aware reasoning,
+- and interpretable optimization.
 
 ---
 
-## Overview
+## ⚙️ Workflow
 
-The AutoResearch workflow:
+The AutoResearch pipeline:
+
 1. modifies a restricted set of experiment parameters,
 2. launches NeurINO training,
 3. evaluates validation performance,
-4. records metrics into machine-readable summaries,
+4. records experiment metrics,
 5. iteratively explores improved configurations.
 
 The framework is intentionally conservative:
@@ -28,62 +44,37 @@ The framework is intentionally conservative:
 
 ---
 
-## Main Components
+## 📂 Main Components
 
-### `train_seg_autoresearch.py`
-
-AutoResearch training entrypoint.
-
-Features:
-- constrained search space
-- dynamic trainer generation
-- automatic experiment logging
-- compact metrics export
-- reproducible configuration tracking
-
-Outputs:
-```text
-autoresearch_runs/<run_name>/metrics_compact.json
-```
+| File | Description |
+|---|---|
+| `train_seg_autoresearch.py` | Autonomous experiment launcher |
+| `program_seg.md` | Research policy and experiment strategy |
+| `autoresearch_runs/` | Experiment outputs and compact metrics |
 
 ---
 
-### `program_seg.md`
+## 🔬 Search Space
 
-Research policy and experiment strategy specification.
-
-Defines:
-- optimization objectives
-- search priorities
-- topology-aware reasoning
-- experiment constraints
-- scientific search behavior
-
----
-
-## Search Space
-
-Current searchable directions include:
-
-### DINO / Transfer Learning
+### 🧬 DINO / Transfer Learning
 - inflation strategies
 - DINOv3 backbone variants
 - kernel inflation depth
 - encoder freezing
 
-### Architecture
+### 🏗️ Architecture
 - model block configuration
 - kernel sizes
 - deep supervision
 
-### Topology-aware Learning
-- topology-aware losses 
+### 🌱 Topology-aware Learning
+- topology-aware losses
 - loss weighting
 - topology-sensitive optimization
 
 ---
 
-## Example Usage
+## 🚀 Example Usage
 
 Run from the project root:
 
@@ -91,20 +82,28 @@ Run from the project root:
 python autoresearch/train_seg_autoresearch.py
 ```
 
-Results will be written to:
+Experiment summaries are written to:
 
 ```text
-autoresearch_runs/
+autoresearch_runs/ 
 ```
 
 ---
 
-## Notes
+## 📊 Experiment Philosophy
 
-This framework is designed for research experimentation rather than large-scale black-box hyperparameter optimization.
+This framework is designed for:
+- hypothesis-driven experimentation,
+- topology-aware optimization,
+- controlled scientific exploration,
+- and interpretable analysis.
 
-The emphasis is on:
-- interpretability,
-- topology-aware reasoning,
-- controlled experimentation,
-- and scientific analysis.
+The goal is not brute-force hyperparameter search, but interpretable and research-oriented experimentation.
+
+---
+
+## 📌 Notes
+
+- Only predefined research variables are explored.
+- Core code remains fixed.
+- The framework is intended for research experimentation rather than large-scale black-box hyperparameter optimization. 
