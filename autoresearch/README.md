@@ -4,10 +4,10 @@
   Autonomous hypothesis-driven research framework for topology-aware 3D neuron segmentation.
 </p>
 
-<p align="center">
+<!-- <p align="center">
   <a href="../README.md"><img src="https://img.shields.io/badge/Main-NeurINO-black"></a>
   <a href="./program_seg.md"><img src="https://img.shields.io/badge/Research-Policy-blue"></a>
-</p>
+</p> -->
 
 ---
 
