@@ -1,8 +1,8 @@
 # 🤖 NeurINO AutoResearch
 
-<p align="center">
+<!-- <p align="center">
   Autonomous hypothesis-driven research framework for topology-aware 3D neuron segmentation.
-</p>
+</p> -->
 
 <!-- <p align="center">
   <a href="../README.md"><img src="https://img.shields.io/badge/Main-NeurINO-black"></a>
@@ -13,14 +13,14 @@
 
 ## 🧠 Overview
 
-NeurINO AutoResearch is an autonomous experimentation framework designed for controlled and interpretable exploration of:
+NeurINO AutoResearch is an autonomous experimentation framework for topology-aware 3D neuron segmentation. It is designed for controlled and interpretable exploration of:
 
 - DINOv3-to-3D transfer strategies
 - topology-aware learning objectives
 - architectural configurations
 - training and optimization strategies
 
-This framework operates within a constrained interpretable research space designed for:
+This framework operates within a constrained research space designed for:
 - scientific experimentation,
 - topology-aware reasoning,
 - and interpretable optimization.
