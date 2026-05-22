@@ -9,8 +9,6 @@
   <a href="./program_seg.md"><img src="https://img.shields.io/badge/Research-Policy-blue"></a>
 </p> -->
 
----
-
 ## 🧠 Overview
 
 NeurINO AutoResearch is an autonomous experimentation framework for topology-aware 3D neuron segmentation. It is designed for controlled and interpretable exploration of:
@@ -25,7 +23,6 @@ This framework operates within a constrained research space designed for:
 - topology-aware reasoning,
 - and interpretable optimization.
 
----
 
 ## ⚙️ Workflow
 
@@ -42,7 +39,6 @@ The framework is intentionally conservative:
 - dataset preprocessing and evaluation remain fixed,
 - only predefined research variables are explored.
 
----
 
 ## 📂 Main Components
 
@@ -52,7 +48,6 @@ The framework is intentionally conservative:
 | `program_seg.md` | Research policy and experiment strategy |
 | `autoresearch_runs/` | Experiment outputs and compact metrics |
 
----
 
 ## 🔬 Search Space
 
@@ -72,7 +67,6 @@ The framework is intentionally conservative:
 - loss weighting
 - topology-sensitive optimization
 
----
 
 ## 🚀 Example Usage
 
@@ -88,7 +82,6 @@ Experiment summaries are written to:
 autoresearch_runs/ 
 ```
 
----
 
 ## 📊 Experiment Philosophy
 
@@ -100,7 +93,6 @@ This framework is designed for:
 
 The goal is not brute-force hyperparameter search, but interpretable and research-oriented experimentation.
 
----
 
 ## 📌 Notes
 
