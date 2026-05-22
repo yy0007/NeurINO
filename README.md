@@ -18,6 +18,7 @@
 
 ## 📰 Latest News
 
+- [2026.05] 🤖 AutoResearch framework released (autoresearch/)
 - [2026.03] 📄 arXiv version released
 - [2026.03] 🚀 Code released 
 - [2026.02] 🎉 NeurINO accepted to CVPR 2026
