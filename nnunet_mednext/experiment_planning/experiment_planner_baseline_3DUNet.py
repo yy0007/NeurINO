@@ -430,7 +430,7 @@ class ExperimentPlanner(object):
         use_nonzero_mask_for_normalization = self.plans['use_mask_for_norm']
         intensityproperties = self.plans['dataset_properties']['intensityproperties']
         preprocessor_class = recursive_find_python_class([join(nnunet_mednext.__path__[0], "preprocessing")],
-                                                         self.preprocessor_name, current_module="nnunet.preprocessing")
+                                                         self.preprocessor_name, current_module="nnunet_mednext.preprocessing")
         assert preprocessor_class is not None
         preprocessor = preprocessor_class(normalization_schemes, use_nonzero_mask_for_normalization,
                                          self.transpose_forward,
